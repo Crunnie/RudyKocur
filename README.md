@@ -1,27 +1,27 @@
-Welcome to the Glitch BETA
-==========================
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+# DiscordDefender
+**Status: Work in Progress**
 
 
-Your Project
-------------
+## Q&A:
+What's Discord Defender?
+> Discord Defender is a moderation/utility bot created by JustCrunnie#3839. 
 
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+Can I add the bot to my server?
+> Go ahead and [click here!](https://discordapp.com/oauth2/authorize?client_id=415185072992288768&permissions=8&scope=bot)
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+I have a few questions about the bot. Where can I ask them?
+> Join our [Discord server.](https//discord.gg/SrspmwF)
 
+## Update Log
+**Version: 1.0**
 
-Made by [Fog Creek](https://fogcreek.com/)
--------------------
+Bot's finally hosted so I added a few things that would optimise it. Also preparing the bot to connect the bot to a spreadsheet so levels won't reset between bot updates. 
 
-\ ゜o゜)ノ
+*Updates*
+
+- [x] Invite command so you can easily add the bot to your server;
+- [x] Bot replies get deleted after 5 seconds in some commands;
+- [x] I had put the right invite in support command. Sorry for that...;
+- [ ] Free cookies. Budget cuts... *shrug*
+ 
+ **NOTE** Self hosting is allowed although support is not provided.
