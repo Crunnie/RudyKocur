@@ -81,7 +81,7 @@ bot.on('message', async message => {
     let curXp = profiles[message.author.id].xp
     let curLvl = profiles[message.author.id].level
     profiles[message.author.id].xp = curXp + xpAdd;
-    let nxtLvl = (5 + curLvl) * (curLvl ^ 2) + 50 * curLvl+ 150
+    let nxtLvl = 5 * (curLvl ^ 2) + 50 * curLvl + 100
 
     if(nxtLvl <= profiles[message.author.id].xp){
         profiles[message.author.id].level = curLvl + 1
