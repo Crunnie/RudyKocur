@@ -14,7 +14,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const botSettings = require('./config.json');
 const fs = require("fs");
-const talkedRecently = new Set();
 
 bot.commands = new Discord.Collection();
 const profiles = require('./profiles.json');
@@ -103,16 +102,9 @@ bot.on('message', async message => {
 
     if(!command.startsWith(prefix)) return;
 
-    if (talkedRecently.has(message.author.id)) return message.reply("please wait 3 seconds before using another command!")
-
-    talkedRecently.add(message.author.id);
-        setTimeout(() => {
-            talkedRecently.delete(message.author.id);
-        }, 3000);
-
     let cmd = bot.commands.get(command.slice(prefix.length));
     if(cmd) cmd.run(bot, message, args);
 });
 
 
-bot.login(botSettings.token);
+bot.login(process.env.token);
