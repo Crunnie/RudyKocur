@@ -41,7 +41,7 @@ bot.on('ready', () => {
     console.log(`${bot.user.username} is ready for deployment!`);
     console.log(`ID: ${bot.user.id}, Server Count:${bot.guilds.size}`);
     
-    bot.user.setActivity(`out for d.help`, {type: "WATCHING"})
+    bot.user.setActivity(`oblizywanie łapek i czekanie na rhelp`)
     //bot.setInterval(() => {
         //bot.user.setActivity(`to ${bot.users.size} users || d.help`, { type: "LISTENING"});
     //}, 5000)
