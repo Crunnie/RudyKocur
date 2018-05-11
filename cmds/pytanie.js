@@ -6,6 +6,7 @@ exports.run = (client, message, args) =>
     if(!chnl) return message.reply(`there's no suggestion channel here...`)
   
     let zesSerw = message.guild.roles.find(`name`,"Zespół Serwera")
+    if(message.member.roles.has(zesSerw)) return message.reply("nie masz permisji żeby tą komendę wykonać.")
 
     let cnt = args.join(" ")
     if(!cnt) return message.reply(`you can't leave the suggestion empty.`)
@@ -16,7 +17,6 @@ exports.run = (client, message, args) =>
         .setTimestamp()
         .setFooter(`Wysłane na`, `${message.author.displayAvatarURL}`)
         .setDescription(`${cnt}`)
-        .addField("Informacja", "Skarga musi mieć zebrane przynajmniej 10 głosów, żeby admin się do niej odniósł.")
         
     chnl.send({embed: embed}).then(newMessage => {
         newMessage.react('👍')
@@ -25,5 +25,5 @@ exports.run = (client, message, args) =>
 }
 
 module.exports.help = {
-    name: "skarga"
+    name: "pytanie"
 }
