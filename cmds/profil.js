@@ -1,5 +1,4 @@
 const Discord = module.require("discord.js");
-const botSettings = require("../config.json");
 let profiles = require("../profile.json");
 
 exports.run = (client, message, args) => {
