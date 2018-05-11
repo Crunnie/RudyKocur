@@ -16,6 +16,7 @@ const botSettings = require('./config.json');
 const fs = require("fs");
 
 bot.commands = new Discord.Collection();
+const profiles = require('./profile.json');
 
 
 fs.readdir('./cmds/', (err, files) => {
@@ -50,6 +51,14 @@ bot.on('ready', () => {
 });
 
 bot.on('message', async message => {
+  
+    let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"));
+    if(!profile[message.author.id]){
+        profile[message.author.id] = {
+            punkty: 0
+        };
+    }
+  
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
