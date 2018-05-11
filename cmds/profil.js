@@ -14,10 +14,12 @@ exports.run = (client, message, args) => {
 
     let profEmbed = new Discord.RichEmbed()
     .setAuthor(`Profil`)
+    .setDescription(`***UWAGA:*** Komenda jeszcze w trakcje tworzenia!`)
     .setFooter("Oby tak dalej!", message.author.displayAvatarURL)
     .setTimestamp()
     .setThumbnail(message.author.displayAvatarURL)
-    .addField("Użytkownik", message.author.username, true)
+    .setColor("#e56f20")
+    .addField("Użytkownik", message.author.tag, true)
     .addField("Ilość Punktów", punkty, true)
 
 
