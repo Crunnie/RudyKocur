@@ -9,8 +9,8 @@ exports.run = (client, message, args) =>
     if(!cnt) return message.reply(`you can't leave the suggestion empty.`)
 
     let embed = new Discord.RichEmbed()
-        .setAuthor(`Propozycja od ${message.author.username}`)
-        .setColor("#8981e6")
+        .setAuthor(`Skarga od ${message.author.username}`)
+        .setColor("#d61815")
         .setTimestamp()
         .setFooter(`Wysłane na`, `${message.author.displayAvatarURL}`)
         .setDescription(`${cnt}`)
