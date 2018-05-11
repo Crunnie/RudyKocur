@@ -20,6 +20,7 @@ exports.run = (client, message, args) => {
     .addField("Użytkownik", message.author.username, true)
     .addField("Ilość Punktów", punkty, true)
 
+
     message.channel.send(profEmbed)
 }
 
