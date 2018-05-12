@@ -27,6 +27,8 @@ exports.run = (client, message, args) => {
         fs.writeFile("../profile.json", JSON.stringify(profiles), (err) => {
             if(err) console.log(err)
         })
+  
+    message.reply("już!")
 }
 
 module.exports.help = {

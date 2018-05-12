@@ -42,9 +42,6 @@ bot.on('ready', () => {
     console.log(`ID: ${bot.user.id}, Server Count:${bot.guilds.size}`);
     
     bot.user.setActivity(`oblizywanie łapek || rpomoc`)
-    //bot.setInterval(() => {
-        //bot.user.setActivity(`to ${bot.users.size} users || d.help`, { type: "LISTENING"});
-    //}, 5000)
     bot.user.setStatus("online");
     console.log("Game and Status has been set!");
     console.log(`${bot.user.username} is awaiting commands!`);
@@ -53,7 +50,6 @@ bot.on('ready', () => {
 bot.on('message', async message => {
   
     let użyt = message.mentions.users.first()
-  
     let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"));
     if(!profile[użyt.id]){
         profile[użyt.id] = {
