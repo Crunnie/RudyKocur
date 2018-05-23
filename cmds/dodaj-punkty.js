@@ -1,18 +1,21 @@
 const Discord = module.require("discord.js");
-let profiles = require("../profile.json");
+let profiles = require("../profil.json");
 const fs = require("fs");
+const ms = require("ms");
 
 exports.run = (client, message, args) => {
-  
-    let punktyDodaj = args[0]
-    if(!punktyDodaj) return ("musisz podać ilość punktów.")
-  
-    let użyt = args[1]
-    użyt = message.mentions.users.first()
+ 
+    let zesSerw = "441959901317824523"
+    if(!message.member.roles.has(zesSerw)) return message.reply("nie masz permisji żeby użyć tej komendę.") 
+
+    let użyt = args[0]
+    użyt = message.guild.member(message.mentions.users.first())
     if(!użyt) return message.reply("nie podałeś użytkownika.")
-  
-    let zesSerw = message.guild.roles.find(`name`,"Zespół Serwera")
-    if(message.member.roles.has(zesSerw)) return message.reply("nie masz permisji żeby tą komendę wykonać.") 
+     
+    let punktyDodaj = args.join(" ").slice(22)
+    doDodania = isNaN(punktyDodaj)
+    if(doDodania == true) return message.reply("podana wartość musi być liczbą")
+    if(!punktyDodaj) return message.reply("musisz podać ilość punktów.")
     
     if(!profiles[użyt.id]){
         profiles[użyt.id] = {
@@ -21,10 +24,10 @@ exports.run = (client, message, args) => {
     }
 
     let punkty = profiles[użyt.id].punkty
-    let nowePunkty = punkty + punktyDodaj
+    let nowePunkty = punkty + doDodania
     
-    profiles[użyt.id].Dollars = nowePunkty
-        fs.writeFile("../profile.json", JSON.stringify(profiles), (err) => {
+    profiles[użyt.id].punkty = nowePunkty
+        fs.writeFile("../profil.json", JSON.stringify(profiles), (err) => {
             if(err) console.log(err)
         })
   

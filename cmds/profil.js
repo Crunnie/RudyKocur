@@ -1,9 +1,9 @@
 const Discord = module.require("discord.js");
-let profiles = require("../profile.json");
+let profiles = require("../profil.json");
 
 exports.run = (client, message, args) => {
   
-    let użyt = message.author || message.mentions.users.first()
+    let użyt = message.mentions.users.first()
     
     if(!profiles[użyt.id]){
         profiles[użyt.id] = {
